@@ -162,14 +162,14 @@ fun TranslatorScreen(context: Context, initialBitmap: Bitmap?) {
     val languages = listOf(
         "中文 (zh)",
         "英语 (en)",
-        "日语 (ja)",
+        "日语 (jp)",
         "韩语 (kor)",
         "法语 (fra)",
         "西班牙语 (spa)",
         "德语 (de)",
         "苗语 (hmn)"
     )
-    val languageCodes = listOf("zh", "en", "ja", "kor", "fra", "spa", "de", "hmn")
+    val languageCodes = listOf("zh", "en", "jp", "kor", "fra", "spa", "de", "hmn")
 
     val languageMap = languages.mapIndexed { index, language ->
         val code = languageCodes[index]
