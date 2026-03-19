@@ -1,0 +1,39 @@
+mixed-port: 7890
+allow-lan: false
+bind-address: "*"
+mode: rule
+log-level: info
+
+proxies:
+  - name: HK-JH
+    type: hysteria2
+    server: 38.55.122.156
+    port: 29397
+    password: 1851b487
+    sni: www.bing.com
+    skip-cert-verify: true
+    download-bandwidth: 1000
+    upload-bandwidth: 1000
+
+  - name: US-WS
+    type: http
+    server: 9.142.200.158
+    port: 7825
+    username: cptdqwpw
+    password: avbjcv2j6crg
+
+proxy-groups:
+  # 隐藏的内部中转链
+  - name: 🇺🇸 美国 (WS 中转)
+    type: relay
+    proxies:
+      - US-WS
+
+  # 你唯一能看到的分组
+  - name: 🚀 代理选择
+    type: select
+    proxies:
+      - 🇺🇸 美国 (WS 中转)
+
+rules:
+  - MATCH,🚀 代理选择
